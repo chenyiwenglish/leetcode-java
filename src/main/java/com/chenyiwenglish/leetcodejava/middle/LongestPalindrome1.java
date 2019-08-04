@@ -1,6 +1,6 @@
 package com.chenyiwenglish.leetcodejava.middle;
 
-public class LongestPalindrome {
+public class LongestPalindrome1 {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
@@ -21,9 +21,21 @@ public class LongestPalindrome {
             int maxi = 0;
             int maxj = 0;
             boolean[][] dp = new boolean[n][n];
-            for (int i = 0; i < n; i++) {
-                for (int j = n - 1; j >= i; j--) {
-                    if (isPalindrome(s, i, j, dp)) {
+            for (int i = n - 2; i >= 0; i--) {
+                dp[i][i] = true;
+                for (int j = i + 1; j < n; j++) {
+                    if (s.charAt(j) == s.charAt(i)) {
+                        if (j == i + 1) {
+                            dp[i][j] = true;
+                        } else if (dp[i + 1][j - 1]) {
+                            dp[i][j] = true;
+                        } else {
+                            dp[i][j] = false;
+                        }
+                    } else {
+                        dp[i][j] = false;
+                    }
+                    if (dp[i][j]) {
                         if (j - i > max) {
                             max = j - i;
                             maxi = i;
@@ -33,39 +45,6 @@ public class LongestPalindrome {
                 }
             }
             return s.substring(maxi, maxj + 1);
-        }
-
-        private boolean isPalindrome(String s, int i, int j, boolean[][] dp) {
-            if (i > j) {
-                return dp[i][j];
-            }
-            if (i == j) {
-                dp[i][j] = true;
-                dp[j][i] = true;
-                return true;
-            }
-            if (s.charAt(i) != s.charAt(j)) {
-                dp[i][j] = false;
-                dp[j][i] = false;
-                return false;
-            }
-            if (j == i + 1) {
-                dp[i][j] = true;
-                return true;
-            }
-            if (dp[i + 1][j - 1]) {
-                dp[i][j] = true;
-                dp[j][i] = true;
-                return true;
-            }
-            if (isPalindrome(s, i + 1, j - 1, dp)) {
-                dp[i][j] = true;
-                dp[j][i] = true;
-                return true;
-            }
-            dp[i][j] = false;
-            dp[j][i] = false;
-            return false;
         }
     }
 
