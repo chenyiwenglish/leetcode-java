@@ -2,7 +2,6 @@ package com.chenyiwenglish.leetcodejava.easy;
 
 public class MergeSortedArray {
 
-
     public static void main(String[] args) {
         Solution solution = new Solution();
         int[] nums1 = {7, 9, 10, 0, 0, 0};
