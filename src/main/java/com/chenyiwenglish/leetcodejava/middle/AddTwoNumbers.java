@@ -87,7 +87,7 @@ public class AddTwoNumbers {
                     }
                     result.next = new ListNode(res);
                     result = result.next;
-                    l2= l2.next;
+                    l2 = l2.next;
                 }
             }
             if (isAdd) {

@@ -28,7 +28,7 @@ public class LongestCommonPrefix {
                     return "";
                 }
             }
-            for (int i = 1; i < min; i ++) {
+            for (int i = 1; i < min; i++) {
                 char c = strs[0].charAt(i);
                 for (String str : strs) {
                     if (str.charAt(i) != c) {
