@@ -11,13 +11,13 @@ public class MergeKSortedLists {
             ListNode node = null;
             while (!isEmpty(lists)) {
                 ListNode minNode = null;
-                int min =  Integer.MAX_VALUE;
-                int idx =  -1;
-                for (int i = 0; i < lists.length; i ++) {
+                int min = Integer.MAX_VALUE;
+                int idx = -1;
+                for (int i = 0; i < lists.length; i++) {
                     if (lists[i] == null) {
                         continue;
                     }
-                    if (lists[i].val <  min) {
+                    if (lists[i].val < min) {
                         min = lists[i].val;
                         minNode = lists[i];
                         idx = i;

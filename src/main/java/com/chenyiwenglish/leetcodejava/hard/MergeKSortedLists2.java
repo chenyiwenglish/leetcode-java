@@ -14,7 +14,7 @@ public class MergeKSortedLists2 {
         ListNode l3 = new ListNode(6);
         l3.next = new ListNode(10);
         Solution solution = new Solution();
-        ListNode res = solution.mergeKLists(new ListNode[] {l1, l3});
+        ListNode res = solution.mergeKLists(new ListNode[]{l1, l3});
         while (res != null) {
             System.out.println(res.val);
             res = res.next;
@@ -28,16 +28,16 @@ public class MergeKSortedLists2 {
             ListNode node = null;
             while (!isEmpty(lists)) {
                 ListNode minNode = null;
-                int min =  Integer.MAX_VALUE;
-                int idx1 =  -1;
-                int idx2 =  -1;
+                int min = Integer.MAX_VALUE;
+                int idx1 = -1;
+                int idx2 = -1;
                 ListNode headNode = null;
                 ListNode preNode = null;
-                for (int i = 0; i < lists.length; i ++) {
+                for (int i = 0; i < lists.length; i++) {
                     if (lists[i] == null) {
                         continue;
                     }
-                    if (lists[i].val <  min) {
+                    if (lists[i].val < min) {
                         min = lists[i].val;
                         minNode = lists[i];
                         idx1 = i;
@@ -50,8 +50,8 @@ public class MergeKSortedLists2 {
                     }
                     preNode = lists[idx1];
                     lists[idx1] = lists[idx1].next;
-                    idx2 =  -1;
-                    int min2 =  Integer.MAX_VALUE;
+                    idx2 = -1;
+                    int min2 = Integer.MAX_VALUE;
                     for (int i = 0; i < lists.length; i++) {
                         if (lists[i] == null) {
                             continue;
