@@ -8,7 +8,7 @@ public class ReverseList {
         ListNode listNode = head;
         int length = 0;
         while (listNode != null) {
-            length ++;
+            length++;
             listNode = listNode.next;
         }
         ListNode[] lists = new ListNode[length];
