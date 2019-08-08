@@ -2,7 +2,7 @@ package com.chenyiwenglish.leetcodejava.middle;
 
 public class MaxProduct {
     public static void main(String[] args) {
-        int[] nums = new int[]{0,-3,1,3,-3,-1,2};
+        int[] nums = new int[]{0, -3, 1, 3, -3, -1, 2};
         System.out.println(new MaxProduct.Solution().maxProduct(nums));
     }
 

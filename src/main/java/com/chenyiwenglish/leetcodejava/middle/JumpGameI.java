@@ -12,7 +12,7 @@ public class JumpGameI {
             if (nums.length <= 1) {
                 return true;
             }
-            for (int i = 0; i < nums.length;) {
+            for (int i = 0; i < nums.length; ) {
                 int maxStep = nums[i];
                 if (maxStep == 0) {
                     return false;
